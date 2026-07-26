@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zabe Sangary Portfolio</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="progress-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <nav id="fp-nav">
+    <ul>
+      <li><a href="#section0" class="active"><span class="nav-dot"></span><span class="nav-tooltip">Hi</span></a></li>
+      <li><a href="#section1"><span class="nav-dot"></span><span class="nav-tooltip">Get to know me</span></a></li>
+      <li><a href="#section2"><span class="nav-dot"></span><span class="nav-tooltip">Projects</span></a></li>
+      <li><a href="#section3"><span class="nav-dot"></span><span class="nav-tooltip">Get in touch</span></a></li>
+    </ul>
+  </nav>
+
+  <div id="fullpage">
+    
+    <!-- Section 0: Hero -->
+    <section class="section" id="section0">
+      <canvas id="hero-particles"></canvas>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Hi, I am Zabe<br><span id="typewriter"></span><span class="cursor">|</span></h1>
+          <p>Web development is my passion. Perhaps in the future we can work together.</p>
+          <div class="buttons">
+            <a href="#section1" class="btn">About me</a>
+            <a href="#section2" class="btn">Projects</a>
+            <a href="#section3" class="btn">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-icons">
+          <i class="fa-solid fa-laptop"></i>
+          <i class="fa-solid fa-terminal"></i>
+        </div>
+        <a href="#section1" class="scroll-down">
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 1: About -->
+    <section class="section" id="section1">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2>What I offer</h2>
+          <p>The work I provide is of highest quality, fully responsive, and tested in a wide range of devices. I take great care to ensure each project is well-documented and easily maintainable so you can enhance a website as your company grows. Often front-end development of a website is overlooked, but being the part of your project that combines design, back-end development and the layer that your users interact with, from my experience, it is the most important to get right.</p>
+          <p>My clients have found that launching with a well considered and well developed front-end has saved them time and money and makes for a product that is consistently of high quality.</p>
+          <a href="#" class="btn btn-primary">Download my resume</a>
+        </div>
+        <div class="about-skills">
+          <h2>Skills</h2>
+          <ul class="skills-list">
+            <li>
+              <i class="fa-brands fa-html5"></i> 
+              <span><strong>Web Design Semantic, </strong>HTML, CSS3, SASS</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-mobile-screen"></i> 
+              <span><strong>Responsive & Fluid, Mobile First</strong></span>
+            </li>
+            <li>
+              <i class="fa-solid fa-code"></i> 
+              <span><strong>Front-end programming, </strong>JavaScript</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-layer-group"></i> 
+              <span><strong>Javascript Frameworks and Libraries</strong>
+                <ul><li>Angular, jQuery, React</li></ul>
+              </span>
+            </li>
+            <li>
+              <i class="fa-solid fa-terminal"></i> 
+              <span><strong>CL, </strong>Grunt/Gulp, Webpack/Vite, Npm, Git etc.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Projects -->
+    <section class="section" id="section2">
+      <div class="container">
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="img-container">
+              <img src="https://stadsarchief.breda.nl/themes/custom/breda/logo.svg" alt="Stadsarchief Breda">
+            </div>
+            <div class="card-body">
+              <a href="https://stadsarchief.breda.nl/" target="_blank" class="btn btn-primary">Launch</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="img-container">
+              <h3>Gelderland in beeld</h3>
+            </div>
+            <div class="card-body">
+              <a href="http://www.gelderlandinbeeld.nl/" target="_blank" class="btn btn-primary">Launch</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="img-container">
+              <h3>Rijksmuseum Twenthe</h3>
+            </div>
+            <div class="card-body">
+              <a href="https://collectie.rijksmuseumtwenthe.nl/" target="_blank" class="btn btn-primary">Launch</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="img-container">
+              <h3>Beeldbank Schiedam</h3>
+            </div>
+            <div class="card-body">
+              <a href="http://beeldbank.schiedam.nl/" target="_blank" class="btn btn-primary">Launch</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="img-container">
+              <h3>Erfgoed Leiden</h3>
+            </div>
+            <div class="card-body">
+              <a href="https://www.erfgoedleiden.nl/" target="_blank" class="btn btn-primary">Launch</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="img-container">
+              <h3>Hansaton</h3>
+            </div>
+            <div class="card-body">
+              <a href="https://www.hansaton.de/en/e/products/models/" target="_blank" class="btn btn-primary">Launch</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="img-container">
+              <h3>PWAL</h3>
+            </div>
+            <div class="card-body">
+              <a href="https://www.producthunt.com/posts/bar-tab" target="_blank" class="btn btn-primary">Launch</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="img-container">
+              <h3>No Excess</h3>
+            </div>
+            <div class="card-body">
+              <a href="https://no-excess.com/" target="_blank" class="btn btn-primary">Launch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Contact -->
+    <section class="section" id="section3">
+      <div class="container contact-content">
+        <div class="contact-form">
+          <h2>Get in touch!</h2>
+          <form id="contactForm" method="POST" action="https://formspree.io/f/zsangary@gmail.com" novalidate>
+            <div class="form-group">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" name="fullname" id="name" placeholder="Full Name" required class="form-control">
+              <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" id="email" name="email" placeholder="id@example.io" required class="form-control">
+              <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <i class="fa-solid fa-pen"></i>
+              <textarea name="message" id="message" placeholder="Allo Zabe," required class="form-control"></textarea>
+              <span class="error-message" id="messageError"></span>
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-bg-icon">
+            <i class="fa-solid fa-laptop"></i>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/zabesangary" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zabe-sangary-a789b712/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://codepen.io/Zabe-Sangary/" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+            <a href="https://twitter.com/zabesan25" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="./src/main.js"></script>
+</body>
+</html>

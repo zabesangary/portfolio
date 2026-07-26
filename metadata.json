@@ -1,0 +1,6 @@
+{
+  "name": "Zabe Sangary Portfolio",
+  "description": "A fully responsive personal portfolio website for Zabe Sangary, featuring skills, projects, and a contact form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

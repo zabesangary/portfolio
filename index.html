@@ -6,13 +6,14 @@
   <title>Zabe Sangary Portfolio</title>
   <link rel="stylesheet" href="./src/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <div id="progress-container">
     <div id="progress-bar"></div>
   </div>
 
-  <nav id="fp-nav">
+  <nav id="fp-nav" class="hidden md:block">
     <ul>
       <li><a href="#section0" class="active"><span class="nav-dot"></span><span class="nav-tooltip">Hi</span></a></li>
       <li><a href="#section1"><span class="nav-dot"></span><span class="nav-tooltip">Get to know me</span></a></li>
@@ -26,19 +27,19 @@
     <!-- Section 0: Hero -->
     <section class="section" id="section0">
       <canvas id="hero-particles"></canvas>
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h1>Hi, I am Zabe<br><span id="typewriter"></span><span class="cursor">|</span></h1>
-          <p>Web development is my passion. Perhaps in the future we can work together.</p>
-          <div class="buttons">
+      <div class="container hero-content flex flex-col md:flex-row items-center justify-between text-center md:text-left w-full relative z-10">
+        <div class="hero-text flex-1">
+          <h1 class="text-4xl md:text-5xl font-bold mb-3">Hi, I am Zabe<br><span id="typewriter"></span><span class="cursor">|</span></h1>
+          <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">Web development is my passion. Perhaps in the future we can work together.</p>
+          <div class="buttons flex flex-col sm:flex-row justify-center md:justify-start gap-4">
             <a href="#section1" class="btn">About me</a>
             <a href="#section2" class="btn">Projects</a>
             <a href="#section3" class="btn">Get in touch</a>
           </div>
         </div>
-        <div class="hero-icons">
-          <i class="fa-solid fa-laptop"></i>
-          <i class="fa-solid fa-terminal"></i>
+        <div class="hero-icons hidden md:flex flex-1 justify-center items-center relative text-[200px] text-[var(--hero-icon)]">
+          <i class="fa-solid fa-laptop absolute transform -translate-x-1/4 -translate-y-1/4 z-0"></i>
+          <i class="fa-solid fa-code absolute transform translate-x-1/4 translate-y-1/4 z-10 text-[var(--hero-icon-solid)] drop-shadow-2xl"></i>
         </div>
         <a href="#section1" class="scroll-down">
           <i class="fa-solid fa-chevron-down"></i>
@@ -48,30 +49,30 @@
 
     <!-- Section 1: About -->
     <section class="section" id="section1">
-      <div class="container about-grid">
+      <div class="container about-grid grid grid-cols-1 md:grid-cols-2 gap-10 w-full text-center md:text-left">
         <div class="about-text">
-          <h2>What I offer</h2>
+          <h2 class="text-3xl font-bold mb-6">What I offer</h2>
           <p>The work I provide is of highest quality, fully responsive, and tested in a wide range of devices. I take great care to ensure each project is well-documented and easily maintainable so you can enhance a website as your company grows. Often front-end development of a website is overlooked, but being the part of your project that combines design, back-end development and the layer that your users interact with, from my experience, it is the most important to get right.</p>
           <p>My clients have found that launching with a well considered and well developed front-end has saved them time and money and makes for a product that is consistently of high quality.</p>
-          <a href="#" class="btn btn-primary">Download my resume</a>
+          <a href="#" class="btn btn-primary mt-6">Download my resume</a>
         </div>
         <div class="about-skills">
-          <h2>Skills</h2>
-          <ul class="skills-list">
+          <h2 class="text-3xl font-bold mb-6">Skills</h2>
+          <ul class="skills-list text-left">
             <li>
               <i class="fa-brands fa-html5"></i> 
               <span><strong>Web Design Semantic, </strong>HTML, CSS3, SASS</span>
             </li>
             <li>
-              <i class="fa-solid fa-mobile-screen"></i> 
+              <i class="fa-solid fa-mobile-screen-button"></i>
               <span><strong>Responsive & Fluid, Mobile First</strong></span>
             </li>
             <li>
-              <i class="fa-solid fa-code"></i> 
+              <i class="fa-solid fa-code"></i>
               <span><strong>Front-end programming, </strong>JavaScript</span>
             </li>
             <li>
-              <i class="fa-solid fa-layer-group"></i> 
+              <i class="fa-solid fa-layer-group"></i>
               <span><strong>Javascript Frameworks and Libraries</strong>
                 <ul><li>Angular, jQuery, React</li></ul>
               </span>
@@ -87,110 +88,195 @@
 
     <!-- Section 2: Projects -->
     <section class="section" id="section2">
-      <div class="container">
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="img-container">
-              <img src="https://stadsarchief.breda.nl/themes/custom/breda/logo.svg" alt="Stadsarchief Breda">
+      <div class="container w-full px-4 md:px-0">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+          <p class="text-gray-300 max-w-2xl mx-auto text-lg">A selection of my recent work, showcasing interactive interfaces, scalable architectures, and beautiful digital experiences.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-4 w-full">
+          
+          <!-- Project 1 -->
+          <div class="group relative text-white overflow-hidden rounded-2xl bg-black/20 border border-white/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+            <div class="h-48 flex items-center justify-center bg-gradient-to-br from-[#ff4081] to-[#7c4dff] relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <img src="https://stadsarchief.breda.nl/templates/cust-brd-maior-website/img/SABlogo.svg" alt="Project Logo" class="h-16 w-auto max-w-[80%] object-contain transform group-hover:scale-110 transition-transform duration-500 z-10 brightness-0 invert">
             </div>
-            <div class="card-body">
-              <a href="https://stadsarchief.breda.nl/" target="_blank" class="btn btn-primary">Launch</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="img-container">
-              <h3>Gelderland in beeld</h3>
-            </div>
-            <div class="card-body">
-              <a href="http://www.gelderlandinbeeld.nl/" target="_blank" class="btn btn-primary">Launch</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="img-container">
-              <h3>Rijksmuseum Twenthe</h3>
-            </div>
-            <div class="card-body">
-              <a href="https://collectie.rijksmuseumtwenthe.nl/" target="_blank" class="btn btn-primary">Launch</a>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold mb-2">Stadsarchief Breda</h3>
+              <p class="text-sm text-gray-300 mb-5 flex-grow leading-relaxed">Digital archive platform for the city of Breda, featuring complex search capabilities and intuitive media viewing.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">React</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Tailwind</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Next.js</span>
+              </div>
+              <a href="https://stadsarchief.breda.nl/" target="_blank" class="block w-full py-3 text-center rounded bg-white/5 hover:bg-[#ff4081] hover:text-white border border-white/10 hover:border-transparent transition-all duration-300 font-medium">View Project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
             </div>
           </div>
-          <div class="project-card">
-            <div class="img-container">
-              <h3>Beeldbank Schiedam</h3>
+
+          <!-- Project 2 -->
+          <div class="group relative text-white overflow-hidden rounded-2xl bg-black/20 border border-white/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+            <div class="h-48 flex items-center justify-center bg-gradient-to-br from-[#00c6ff] to-[#0072ff] relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <img src="https://www.gelderlandinbeeld.nl/templates/cust-gdc-website/img/logo-gelderse.png" alt="Project Logo" class="h-16 w-auto max-w-[80%] object-contain transform group-hover:scale-110 transition-transform duration-500 z-10 brightness-0 invert">
             </div>
-            <div class="card-body">
-              <a href="http://beeldbank.schiedam.nl/" target="_blank" class="btn btn-primary">Launch</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="img-container">
-              <h3>Erfgoed Leiden</h3>
-            </div>
-            <div class="card-body">
-              <a href="https://www.erfgoedleiden.nl/" target="_blank" class="btn btn-primary">Launch</a>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="img-container">
-              <h3>Hansaton</h3>
-            </div>
-            <div class="card-body">
-              <a href="https://www.hansaton.de/en/e/products/models/" target="_blank" class="btn btn-primary">Launch</a>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold mb-2">Gelderland in beeld</h3>
+              <p class="text-sm text-gray-300 mb-5 flex-grow leading-relaxed">Historical image database showcasing the rich heritage and history of the Gelderland province.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Vue.js</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">SCSS</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">REST API</span>
+              </div>
+              <a href="http://www.gelderlandinbeeld.nl/" target="_blank" class="block w-full py-3 text-center rounded bg-white/5 hover:bg-[#0072ff] hover:text-white border border-white/10 hover:border-transparent transition-all duration-300 font-medium">View Project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
             </div>
           </div>
-          <div class="project-card">
-            <div class="img-container">
-              <h3>PWAL</h3>
+
+          <!-- Project 3 -->
+          <div class="group relative text-white overflow-hidden rounded-2xl bg-black/20 border border-white/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+            <div class="h-48 flex items-center justify-center bg-gradient-to-br from-[#f12711] to-[#f5af19] relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <img src="https://www.rijksmuseumtwenthe.nl/assets/images/svg/logo.svg" alt="Project Logo" class="h-16 w-auto max-w-[80%] object-contain transform group-hover:scale-110 transition-transform duration-500 z-10 brightness-0 invert">
             </div>
-            <div class="card-body">
-              <a href="https://www.producthunt.com/posts/bar-tab" target="_blank" class="btn btn-primary">Launch</a>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold mb-2">Rijksmuseum Twenthe</h3>
+              <p class="text-sm text-gray-300 mb-5 flex-grow leading-relaxed">Interactive museum collection explorer providing high-resolution image viewing and detailed artist insights.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Angular</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">TypeScript</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">WebGL</span>
+              </div>
+              <a href="https://collectie.rijksmuseumtwenthe.nl/" target="_blank" class="block w-full py-3 text-center rounded bg-white/5 hover:bg-[#f12711] hover:text-white border border-white/10 hover:border-transparent transition-all duration-300 font-medium">View Project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
             </div>
           </div>
-          <div class="project-card">
-            <div class="img-container">
-              <h3>No Excess</h3>
+
+          <!-- Project 4 -->
+          <div class="group relative text-white overflow-hidden rounded-2xl bg-black/20 border border-white/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+            <div class="h-48 flex items-center justify-center bg-gradient-to-br from-[#11998e] to-[#38ef7d] relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <img src="https://beeldbank.schiedam.nl/templates/cust-shi-beeldbank/img/logo-shi.png" alt="Project Logo" class="h-16 w-auto max-w-[80%] object-contain transform group-hover:scale-110 transition-transform duration-500 z-10 brightness-0 invert">
             </div>
-            <div class="card-body">
-              <a href="https://no-excess.com/" target="_blank" class="btn btn-primary">Launch</a>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold mb-2">Beeldbank Schiedam</h3>
+              <p class="text-sm text-gray-300 mb-5 flex-grow leading-relaxed">Multimedia repository giving public access to thousands of historical documents, videos, and photos.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">React</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Redux</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Node.js</span>
+              </div>
+              <a href="http://beeldbank.schiedam.nl/" target="_blank" class="block w-full py-3 text-center rounded bg-white/5 hover:bg-[#11998e] hover:text-white border border-white/10 hover:border-transparent transition-all duration-300 font-medium">View Project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
             </div>
           </div>
+
+          <!-- Project 5 -->
+          <div class="group relative text-white overflow-hidden rounded-2xl bg-black/20 border border-white/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+            <div class="h-48 flex items-center justify-center bg-gradient-to-br from-[#8e2de2] to-[#4a00e0] relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <img src="https://www.erfgoedleiden.nl/templates/cust-lei-erfgoedleiden/images/logo-leiden-en-omstreken.png" alt="Project Logo" class="h-16 w-auto max-w-[80%] object-contain transform group-hover:scale-110 transition-transform duration-500 z-10 brightness-0 invert">
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold mb-2">Erfgoed Leiden</h3>
+              <p class="text-sm text-gray-300 mb-5 flex-grow leading-relaxed">Interactive heritage portal for Leiden, integrating maps, timelines, and extensive archival datasets.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Svelte</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">GraphQL</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Mapbox</span>
+              </div>
+              <a href="https://www.erfgoedleiden.nl/" target="_blank" class="block w-full py-3 text-center rounded bg-white/5 hover:bg-[#8e2de2] hover:text-white border border-white/10 hover:border-transparent transition-all duration-300 font-medium">View Project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="group relative text-white overflow-hidden rounded-2xl bg-black/20 border border-white/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+            <div class="h-48 flex items-center justify-center bg-gradient-to-br from-[#fc4a1a] to-[#f7b733] relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <img src="https://www.hansaton.com/content/experience-fragments/hansaton/de/de/site/header/for-consumers/_jcr_content/root/header_copy/logoDesktop.coreimg.png/1747390986961/ht-logo-horizontal-grey-rgb.png" alt="Project Logo" class="h-16 w-auto max-w-[80%] object-contain transform group-hover:scale-110 transition-transform duration-500 z-10 brightness-0 invert">
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold mb-2">Hansaton</h3>
+              <p class="text-sm text-gray-300 mb-5 flex-grow leading-relaxed">Corporate product showcase and interactive model finder for advanced auditory and hearing solutions.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">HTML5</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">SASS</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">jQuery</span>
+              </div>
+              <a href="https://www.hansaton.de/en/e/products/models/" target="_blank" class="block w-full py-3 text-center rounded bg-white/5 hover:bg-[#fc4a1a] hover:text-white border border-white/10 hover:border-transparent transition-all duration-300 font-medium">View Project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 7 -->
+          <div class="group relative text-white overflow-hidden rounded-2xl bg-black/20 border border-white/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+            <div class="h-48 flex items-center justify-center bg-gradient-to-br from-[#b20a2c] to-[#fffbd5] relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <i class="fa-solid fa-beer-mug-empty text-7xl text-white/90 transform group-hover:scale-110 transition-transform duration-500 z-10"></i>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold mb-2">PWAL (Bar Tab)</h3>
+              <p class="text-sm text-gray-300 mb-5 flex-grow leading-relaxed">A modern, responsive web application designed for seamlessly tracking and managing group bar tabs.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">React Native</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Firebase</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">UI/UX</span>
+              </div>
+              <a href="https://www.producthunt.com/posts/bar-tab" target="_blank" class="block w-full py-3 text-center rounded bg-white/5 hover:bg-[#b20a2c] hover:text-white border border-white/10 hover:border-transparent transition-all duration-300 font-medium">View Project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 8 -->
+          <div class="group relative text-white overflow-hidden rounded-2xl bg-black/20 border border-white/10 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">
+            <div class="h-48 flex items-center justify-center bg-gradient-to-br from-[#232526] to-[#414345] relative overflow-hidden">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <img src="https://no-excess.com/cdn/shop/files/No_Excess.png?v=1755541262&width=420" alt="No Excess Logo" class="h-12 w-auto object-contain transform group-hover:scale-110 transition-transform duration-500 z-10 brightness-0 invert">
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold mb-2">No Excess</h3>
+              <p class="text-sm text-gray-300 mb-5 flex-grow leading-relaxed">E-commerce storefront offering a seamless, high-performance shopping experience for modern men's fashion.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Shopify</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Liquid</span>
+                <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10">Alpine.js</span>
+              </div>
+              <a href="https://no-excess.com/" target="_blank" class="block w-full py-3 text-center rounded bg-white/5 hover:bg-[#414345] hover:text-white border border-white/10 hover:border-transparent transition-all duration-300 font-medium">View Project <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </section>
 
     <!-- Section 3: Contact -->
     <section class="section" id="section3">
-      <div class="container contact-content">
-        <div class="contact-form">
-          <h2>Get in touch!</h2>
+      <div class="container contact-content grid grid-cols-1 md:grid-cols-2 gap-15 w-full text-center md:text-left">
+        <div class="contact-form bg-[var(--form-bg)] p-10 rounded-lg">
+          <h2 class="text-3xl font-bold mb-6">Get in touch!</h2>
           <form id="contactForm" method="POST" action="https://formspree.io/f/zsangary@gmail.com" novalidate>
-            <div class="form-group">
-              <i class="fa-solid fa-user"></i>
-              <input type="text" name="fullname" id="name" placeholder="Full Name" required class="form-control">
+            <div class="form-group mb-5 relative">
+              <i class="fa-solid fa-user absolute top-4 left-4 text-[var(--social-icon)]"></i>
+              <input type="text" name="fullname" id="name" placeholder="Full Name" required class="form-control w-full py-3 px-10 border-none rounded bg-[var(--input-bg)] text-[var(--input-text)] focus:outline-none focus:ring-2 focus:ring-[#ff4081]">
               <span class="error-message" id="nameError"></span>
             </div>
-            <div class="form-group">
-              <i class="fa-solid fa-envelope"></i>
-              <input type="email" id="email" name="email" placeholder="id@example.io" required class="form-control">
+            <div class="form-group mb-5 relative">
+              <i class="fa-solid fa-envelope absolute top-4 left-4 text-[var(--social-icon)]"></i>
+              <input type="email" id="email" name="email" placeholder="id@example.io" required class="form-control w-full py-3 px-10 border-none rounded bg-[var(--input-bg)] text-[var(--input-text)] focus:outline-none focus:ring-2 focus:ring-[#ff4081]">
               <span class="error-message" id="emailError"></span>
             </div>
-            <div class="form-group">
-              <i class="fa-solid fa-pen"></i>
-              <textarea name="message" id="message" placeholder="Allo Zabe," required class="form-control"></textarea>
+            <div class="form-group mb-5 relative">
+              <i class="fa-solid fa-pen absolute top-4 left-4 text-[var(--social-icon)]"></i>
+              <textarea name="message" id="message" placeholder="Allo Zabe," required class="form-control w-full py-3 px-10 border-none rounded bg-[var(--input-bg)] text-[var(--input-text)] min-h-[120px] resize-y focus:outline-none focus:ring-2 focus:ring-[#ff4081]"></textarea>
               <span class="error-message" id="messageError"></span>
             </div>
-            <button type="submit" id="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+            <button type="submit" id="submit" class="btn btn-primary w-full py-3 rounded text-white bg-[#ff4081] hover:bg-[#e91e63] transition-colors font-medium">Submit</button>
           </form>
         </div>
         
-        <div class="contact-info">
-          <div class="contact-bg-icon">
+        <div class="contact-info flex flex-col justify-center items-center">
+          <div class="contact-bg-icon hidden md:flex items-center justify-center text-[260px] text-[var(--contact-bg-icon)]">
             <i class="fa-solid fa-laptop"></i>
           </div>
-          <div class="social-links">
-            <a href="https://github.com/zabesangary" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/zabe-sangary-a789b712/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://codepen.io/Zabe-Sangary/" target="_blank"><i class="fa-brands fa-codepen"></i></a>
-            <a href="https://twitter.com/zabesan25" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+          <div class="social-links flex justify-center w-full gap-6 mt-10">
+            <a href="https://github.com/zabesangary" target="_blank" class="w-14 h-14 rounded-full bg-[var(--form-bg)] flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(255,255,255,0.1)] transition-all duration-300 border border-white/5"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zabe-sangary-a789b712/" target="_blank" class="w-14 h-14 rounded-full bg-[var(--form-bg)] flex items-center justify-center text-2xl text-gray-300 hover:text-[#0077b5] hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(0,119,181,0.2)] transition-all duration-300 border border-white/5"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://codepen.io/Zabe-Sangary/" target="_blank" class="w-14 h-14 rounded-full bg-[var(--form-bg)] flex items-center justify-center text-2xl text-gray-300 hover:text-white hover:bg-white/10 hover:-translate-y-2 hover:shadow-[0_10px_20px_rgba(255,255,255,0.1)] transition-all duration-300 border border-white/5"><i class="fa-brands fa-codepen"></i></a>
           </div>
         </div>
       </div>
